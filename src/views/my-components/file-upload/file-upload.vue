@@ -135,7 +135,7 @@
                                         </div>
                                     </Upload>
                                     <Modal title="查看图片" v-model="visible">
-                                        <img :src="'https://o5wwk8baw.qnssl.com/' + imgName + '/large'" v-if="visible" style="width: 100%">
+                                        <img :src="'https://wxapi.benpaobao.com/static/origin/user_info_img/car_img/37b398d8-8273-11e8-af71-00163e0ad122.jpg'" v-if="visible" style="width: 100%">
                                     </Modal>
                                 </Card>
                             </Col>

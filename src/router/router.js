@@ -66,6 +66,16 @@ export const otherRouter = {
 
 // 作为Main组件的子页面展示并且在左侧菜单显示的路由写在appRouter里
 export const appRouter = [
+        {
+        path: '/cs-table',
+        icon: 'person-stalker',
+        name: 'cstable',
+        title: '表格测试',
+        component: Main,
+        children: [
+            { path: 'index', title: '表格测试', name: 'cstable_index', component: () => import('@/views/cs-table/cs-table.vue') }
+        ]
+    },
     {
         path: '/access',
         icon: 'key',
@@ -182,18 +192,6 @@ export const appRouter = [
 
         ]
     },
-    // {
-    //     path: '/charts',
-    //     icon: 'ios-analytics',
-    //     name: 'charts',
-    //     title: '图表',
-    //     component: Main,
-    //     children: [
-    //         { path: 'pie', title: '饼状图', name: 'pie', icon: 'ios-pie', component: resolve => { require('@/views/access/access.vue') },
-    //         { path: 'histogram', title: '柱状图', name: 'histogram', icon: 'stats-bars', component: resolve => { require('@/views/access/access.vue') }
-
-    //     ]
-    // },
     {
         path: '/tables',
         icon: 'ios-grid-view',

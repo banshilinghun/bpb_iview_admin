@@ -32,12 +32,11 @@ service.interceptors.response.use(
     const res = response.data
     console.log(res.code)
     if (res.code !== 1000) {
-    	console.log(Message)
       Message.error(res.msg); 
       //this.$Message.error(res.msg)
       return Promise.reject('error')
     } else {
-    	Message.success('登录成功！');
+   
       return response.data
     }
   },
@@ -46,5 +45,5 @@ service.interceptors.response.use(
     this.$Message.error(error.message);
     return Promise.reject(error)
   })
-
+service.defaults.withCredentials = true 
 export default service

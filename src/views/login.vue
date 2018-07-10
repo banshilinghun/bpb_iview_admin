@@ -39,7 +39,7 @@
 
 <script>
 	import Cookies from 'js-cookie';
-	import { loginByUsername, logout, getUserInfo } from '@/api/login'
+	import { loginByUsername} from '@/api/login'
 	export default {
 		data() {
 			return {
@@ -68,6 +68,7 @@
 						const username = this.form.userName.trim();
 						return new Promise((resolve, reject) => {
 							loginByUsername(username, this.form.password).then(response => {
+							   this.$Message.success('登录成功！');
 								const data = response.data
 								Cookies.set('user', this.form.userName);
 								this.$store.commit('setAvator', 'https://wx.qlogo.cn/mmhead/Q3auHgzwzM5BCHQ40LAvUVfggXkReGhEEHRpLb51UjClRfxD3vFfJg/0');
